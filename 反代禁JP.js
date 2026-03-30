@@ -11,9 +11,9 @@ export default {
     // 2. 多服扩展路由表（一拖多核心玩法）
     // 格式："你的反代子域名": { domain: "目标服真实域名", port: "端口", protocol: "协议" }
     const routeMap = {
-      "okyd.fastemby.us.ci": { domain: "link01.okemby.org", port: "8443", protocol: "https" },
-      "xueshan.fastemby.us.ci": { domain: "xueshan.liminalnet.com", port: "443", protocol: "https" },
-      "emos.fastemby.us.ci": { domain: "emos.best", port: "443", protocol: "https" }
+     // "你的反代子域名": { domain: "目标服真实域名", port: "443", protocol: "https" },
+      //"你的反代子域名": { domain: "目标服真实域名", port: "443", protocol: "https" },
+      //"你的反代子域名": { domain: "目标服真实域名", port: "443", protocol: "https" }
     };
     // ===========================================================
 
