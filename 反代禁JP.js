@@ -48,7 +48,7 @@ export default {
     // -----------------------------------------------------------
     // 1. 恶意 User-Agent 快速拦截
     // -----------------------------------------------------------
-    const bad_agents = ['python', 'curl', 'wget', 'http-client', 'scrapy', 'java/', 'go-http'];
+    const bad_agents = ['python', 'curl', 'wget', 'scrapy'];
     if (bad_agents.some(agent => userAgent.toLowerCase().includes(agent))) {
       return new Response("403 Forbidden: Bot detected", { status: 403 });
     }
@@ -92,6 +92,7 @@ export default {
     // -----------------------------------------------------------
     // 4. 路径检测：仅允许 /emby 开头 (防网页端滥用)
     // -----------------------------------------------------------
+    /*
     if (!url.pathname.startsWith('/emby')) {
       const guideHtml = `
       <!DOCTYPE html>
@@ -130,7 +131,7 @@ export default {
         }
       });
     }
-
+*/
     // ===========================================================
     // 6. 播放进度上报节流 (防炸库核心)
     // ===========================================================
