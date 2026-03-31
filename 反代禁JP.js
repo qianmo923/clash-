@@ -153,9 +153,16 @@ export default {
     const new_headers = new Headers(request.headers);
     new_headers.set('Host', upstream_domain);
     
-    // 如果你要反代 EMOS 服，务必把下面的工牌取消注释并填好你的 ID
-    // new_headers.set('EMOS-PROXY-ID', '你的ID'); 
-    // new_headers.set('EMOS-PROXY-NAME', '你的称号');
+    // 【智能工牌分发】只有当目标服是 EMOS 时，才发送这两个头部
+    if (upstream_domain === 'emos.best') {
+    //  new_headers.set('EMOS-PROXY-ID', '你的ID'); 
+    //  new_headers.set('EMOS-PROXY-NAME', '@你的称号');
+    }
+
+    // 未来如果你有其他服也需要专属 Header，也可以照猫画虎写在这里
+    // if (upstream_domain === '别的服.com') {
+    //   new_headers.set('OTHER-HEADER', '12345'); 
+    // }
 
     if (clientIP && clientIP !== 'Unknown') {
       new_headers.set('X-Forwarded-For', clientIP);
